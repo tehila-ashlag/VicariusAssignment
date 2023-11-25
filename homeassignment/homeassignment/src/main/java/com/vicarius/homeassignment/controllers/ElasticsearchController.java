@@ -10,27 +10,6 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.logging.Logger;
 
-////import org.springframework.web.bind.annotation.PostMapping;
-////import java.util.Map;
-////import org.elasticsearch.client.GetRequest;
-////import org.elasticsearch.client.GetResponse;
-////import org.springframework.web.bind.annotation.GetMapping;
-//
-//import org.springframework.web.bind.annotation.RequestMapping;
-////import org.springframework.web.bind.annotation.RequestBody;
-////import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.RestController;
-////import org.elasticsearch.client.RequestOptions;
-////import org.elasticsearch.client.RestHighLevelClient;
-////import org.elasticsearch.client.indices.CreateIndexRequest;
-////import org.elasticsearch.client.indices.CreateIndexResponse;
-////import org.elasticsearch.action.index.IndexRequest;
-////import org.elasticsearch.action.index.IndexResponse;
-//
-//
-//import java.io.IOException;
-//import co.elastic.clients.elasticSearch.ElasticsearchClient;
-//
 @RestController
 @RequestMapping("/api")
 public class ElasticsearchController {
