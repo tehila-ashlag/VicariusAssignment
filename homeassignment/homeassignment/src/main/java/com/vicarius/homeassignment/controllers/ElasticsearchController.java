@@ -16,7 +16,6 @@ public class ElasticsearchController {
 
     private final ElasticsearchClient esClient;
     private String lastCreatedIndexName;
-    private Logger logger;
 
     @Autowired
     public ElasticsearchController(ElasticsearchClient esClient) {
@@ -49,8 +48,6 @@ public class ElasticsearchController {
                 .document(documentToBeCreated)
         );
 
-//        logger.info("Indexed with version " + response.version());
-
         return "Document created with ID: " + response.id();
     }
 
@@ -66,11 +63,7 @@ public class ElasticsearchController {
         Object document=null;
         if (response.found()) {
              document = response.source();
-//           logger.info("Document  name " + document.name);
-        } else {
-            logger.info ("Document not found");
         }
-
 
         return "Document: " + document;
     }
