@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api")
