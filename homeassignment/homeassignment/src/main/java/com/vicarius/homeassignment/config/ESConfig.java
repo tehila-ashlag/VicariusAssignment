@@ -10,14 +10,16 @@ import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ESConfig {
     @Bean
+    @Scope("singleton")
     public RestClient RestClient() {
         // URL and API key
         String serverUrl = "https://localhost:9200";
-        String apiKey = "aFUxUkNJd0I5T013dEs1dmpVaTU6eXo3QkdsaXNSNm1HelBkVFlWTzRFUQ==";
+        String apiKey = "czhEdUNJd0JEUVpsTC1PVWVvTzY6amdkMF9wNFFUcWV5M01Nc3BtaDlqUQ==";
 
         // Create the low-level client
         RestClient restClient = RestClient
@@ -31,6 +33,7 @@ public class ESConfig {
     }
 
     @Bean
+    @Scope("singleton")
     public ElasticsearchTransport ElasticsearchTransport(RestClient restClient) {
         // Create the transport with a Jackson mapper
         ElasticsearchTransport transport = new RestClientTransport(
@@ -40,6 +43,7 @@ public class ESConfig {
     }
 
     @Bean
+    @Scope("singleton")
     public ElasticsearchClient elasticsearchClient(ElasticsearchTransport elasticsearchTransport) {
         // And create the API client
         ElasticsearchClient esClient = new ElasticsearchClient(elasticsearchTransport);
