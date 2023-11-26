@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class ESConfig {
     @Bean
-    @Scope("singleton")
+//  @Scope("singleton") - Default spring scope - can be explicitly declared for clear maintenance
     public RestClient RestClient() {
         // URL and API key
         String serverUrl = "https://localhost:9200";
@@ -33,7 +33,7 @@ public class ESConfig {
     }
 
     @Bean
-    @Scope("singleton")
+//  @Scope("singleton") - Default spring scope - can be explicitly declared for clear maintenance
     public ElasticsearchTransport ElasticsearchTransport(RestClient restClient) {
         // Create the transport with a Jackson mapper
         ElasticsearchTransport transport = new RestClientTransport(
@@ -43,7 +43,7 @@ public class ESConfig {
     }
 
     @Bean
-    @Scope("singleton")
+//  @Scope("singleton") - Default spring scope - can be explicitly declared for clear maintenance
     public ElasticsearchClient elasticsearchClient(ElasticsearchTransport elasticsearchTransport) {
         // And create the API client
         ElasticsearchClient esClient = new ElasticsearchClient(elasticsearchTransport);
