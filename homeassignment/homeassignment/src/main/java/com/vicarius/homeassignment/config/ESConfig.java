@@ -10,7 +10,7 @@ import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+//import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ESConfig {
